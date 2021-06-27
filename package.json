@@ -4,7 +4,8 @@
   "description": "javascript",
   "main": "index.js",
   "scripts": {
-    "prueba-js:variables": "node src/prueba-js/variables_operaciones/index.js",
+    "prueba-js:vars": "node src/prueba-js/vars_operations.js",
+    "prueba-js:functions": "node src/prueba-js/functions.js",
     "prueba-js:condicionales": "node src/prueba-js",
     "prueba-js:ciclos": "node src/prueba-js",
     "prueba-js:funciones": "node src/prueba-js",
