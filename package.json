@@ -1,0 +1,15 @@
+{
+  "name": "curso-practico",
+  "version": "1.0.0",
+  "description": "javascript",
+  "main": "index.js",
+  "scripts": {
+    "prueba-js:variables": "node src/prueba-js/variables_operaciones/index.js",
+    "prueba-js:condicionales": "node src/prueba-js",
+    "prueba-js:ciclos": "node src/prueba-js",
+    "prueba-js:funciones": "node src/prueba-js",
+    "prueba-js:listas": "node src/prueba-js"
+  },
+  "author": "Jorge Trad <jetradl@gmail.com>",
+  "license": "MIT"
+}
