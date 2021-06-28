@@ -7,7 +7,7 @@
     "prueba-js:vars": "node src/prueba-js/vars_operations.js",
     "prueba-js:functions": "node src/prueba-js/functions.js",
     "prueba-js:conditionals": "node src/prueba-js/conditionals.js",
-    "prueba-js:ciclos": "node src/prueba-js",
+    "prueba-js:bucles": "node src/prueba-js/bucles/bucles.js",
     "prueba-js:funciones": "node src/prueba-js",
     "prueba-js:listas": "node src/prueba-js"
   },

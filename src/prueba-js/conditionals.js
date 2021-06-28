@@ -24,5 +24,3 @@ const indexOfSuscription = suscriptions.findIndex(suscription => suscription.sus
 indexOfSuscription > -1     //Operador Ternario
     ? console.log(suscriptions[indexOfSuscription].message)
     : console.error('La suscripción a buscar es inválida, no se pudo encontrar');
-
-
