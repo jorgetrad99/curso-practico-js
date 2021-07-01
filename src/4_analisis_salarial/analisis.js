@@ -1,14 +1,19 @@
+//Helpers / Utils: No son parte de las reglas del negocio, pero son necesarias
+
 const listArraySalarios = (region) => {
   return region.map(function (personita) {
     return personita.salary;
   });
 };
 
-const listSalariosSorted = (listaSalarios) => {
-  return listaSalarios.sort(function (salaryA, salaryB) {
+const listSalariosSorted = (region) => {
+  const listArraySalariosReg = listArraySalarios(region);
+  return listArraySalariosReg.sort(function (salaryA, salaryB) {
     return salaryA - salaryB;
   });
 };
+
+const salariosColStored = listSalariosSorted(colombia);
 
 const esPar = (numerito) => {
   return numerito % 2 === 0;
@@ -22,21 +27,32 @@ const calcularMediaAritmetica = (lista) => {
   return promedioLista;
 };
 
-function medianaSalarios(lista) {
-  const sortedList = listSalariosSorted(listArraySalarios(lista));
-  const mitad = parseInt(sortedList.length / 2);
+function medianaSalarios(listaSorted) {
+  const mitad = parseInt(listaSorted.length / 2);
 
-  if (esPar(sortedList.length)) {
-    const personitaMitad1 = sortedList[mitad - 1];
-    const personitaMitad2 = sortedList[mitad];
+  if (esPar(listaSorted.length)) {
+    const personitaMitad1 = listaSorted[mitad - 1];
+    const personitaMitad2 = listaSorted[mitad];
 
     const mediana = calcularMediaAritmetica([personitaMitad1, personitaMitad2]);
 
     return mediana;
   } else {
-    const personitaMitad = sortedList[mitad];
+    const personitaMitad = listaSorted[mitad];
     return personitaMitad;
   }
 }
 
-console.log(`${medianaSalarios(colombia)}`);
+const medianaGeneralCol = medianaSalarios(listSalariosSorted(colombia));
+console.log(
+  `La mediana general de los colombianos es de: ${medianaGeneralCol}`
+);
+
+//Mediana del top 10% porciento
+const spliceStart = (salariosColStored.length * 90) / 100;
+const spliceCount = salariosColStored.length - spliceStart;
+
+const salariosColTop10 = salariosColStored.splice(spliceStart, spliceCount);
+const medianaTop10Col = medianaSalarios(salariosColTop10);
+
+console.log(`La mediana del Top 10% de colombianos es de: ${medianaTop10Col}`);
