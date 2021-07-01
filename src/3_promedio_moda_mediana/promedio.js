@@ -8,3 +8,5 @@ const calcularMediaAritmetica = (lista) => {
 
   return promedioLista;
 };
+
+console.log(calcularMediaAritmetica(lista1));
